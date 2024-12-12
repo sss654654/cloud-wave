@@ -1,0 +1,131 @@
+Network Resources
+# AP_NORTHEAST_2 (SEOUL REGION)
+- lab-edu-vpc-ap-01 (10.0.0.0/16)
+    - lab-edu-sub-pub-01 /  lab-edu-rtb-pub /    lab-edu-igw /      lab-edu-nacl
+    - lab-edu-sub-pub-02 /  lab-edu-rtb-pub /    lab-edu-igw /      lab-edu-nacl
+    - lab-edu-sub-pri-01 /  lab-edu-rtb-pri-01 / lab-edu-natgw-01 / lab-edu-nacl (NAT GW O)
+    - lab-edu-sub-pri-02 /  lab-edu-rtb-pri-02 / -                / lab-edu-nacl (NAT GW X)
+    - lab-edu-sub-db-01  /  lab-edu-rtb-db  /    -                / lab-edu-nacl
+    - lab-edu-sub-db-02  /  lab-edu-rtb-db  /    -                / lab-edu-nacl
+    - lab-edu-sub-tgw-01 /  lab-edu-rtb-tgw /    -                / lab-edu-nacl
+    - lab-edu-sub-tgw-02 /  lab-edu-rtb-tgw /    -                / lab-edu-nacl
+- lab-edu-vpc-ap-02 (10.10.0.0/16)
+    - lab-edu-sub-2nd-pub-01 /  lab-edu-rtb-2nd-pub /   lab-edu-igw-2nd / lab-edu-nacl-2nd
+    - lab-edu-sub-2nd-pub-02 /  lab-edu-rtb-2nd-pub /   lab-edu-igw-2nd / lab-edu-nacl-2nd
+    - lab-edu-sub-2nd-pri-01 /  lab-edu-rtb-2nd-pri /   -               / lab-edu-nacl-2nd
+    - lab-edu-sub-2nd-pri-02 /  lab-edu-rtb-2nd-pri /   -               / lab-edu-nacl-2nd
+    - lab-edu-sub-2nd-db-01  /  lab-edu-rtb-2nd-db  /   -               / lab-edu-nacl-2nd
+    - lab-edu-sub-2nd-db-02  /  lab-edu-rtb-2nd-db  /   -               / lab-edu-nacl-2nd
+    - lab-edu-sub-2nd-tgw-01 /  lab-edu-rtb-2nd-tgw /   -               / lab-edu-nacl-2nd
+    - lab-edu-sub-2nd-tgw-02 /  lab-edu-rtb-2nd-tgw /   -               / lab-edu-nacl-2nd
+- transit gateway
+    - lab-edu-tgw-ap /  lab-edu-tgw-att-ap-01   =>  lab-edu-sub-tgw-01 ~ 02
+                        lab-edu-tgw-att-ap-02   =>  lab-edu-sub-2nd-tgw-01 ~ 02
+
+# EU_CENTRAL_1 (FRANKFURT REGION)
+- lab-edu-vpc-eu (10.20.0.0/16)
+    - lab-edu-sub-pub-01 /  lab-edu-rtb-pub /   lab-edu-igw    / lab-edu-nacl
+    - lab-edu-sub-pub-02 /  lab-edu-rtb-pub /   lab-edu-igw    / lab-edu-nacl
+    - lab-edu-sub-pri-01 /  lab-edu-rtb-pri /   -              / lab-edu-nacl 
+    - lab-edu-sub-pri-02 /  lab-edu-rtb-pri /   -              / lab-edu-nacl
+    - lab-edu-sub-db-01 /   lab-edu-rtb-db /    -              / lab-edu-nacl
+    - lab-edu-sub-db-02 /   lab-edu-rtb-db /    -              / lab-edu-nacl
+    - lab-edu-sub-tgw-01 /  lab-edu-rtb-tgw /   -              / lab-edu-nacl
+    - lab-edu-sub-tgw-02 /  lab-edu-rtb-tgw /   -              / lab-edu-nacl
+- transit gateway
+    - lab-edu-tgw-eu /  lab-edu-tgw-att-eu   =>  lab-edu-sub-pri-01 ~ 02
+
+# US_EAST_1 (VIRGINIA REGION)
+- lab-edu-vpc-us (10.30.0.0/16)
+    - lab-edu-sub-pub-01 /  lab-edu-rtb-pub /   lab-edu-igw    / lab-edu-nacl
+    - lab-edu-sub-pub-02 /  lab-edu-rtb-pub /   lab-edu-igw    / lab-edu-nacl
+    - lab-edu-sub-pri-01 /  lab-edu-rtb-pri /   -              / lab-edu-nacl 
+    - lab-edu-sub-pri-02 /  lab-edu-rtb-pri /   -              / lab-edu-nacl
+    - lab-edu-sub-db-01 /   lab-edu-rtb-db /    -              / lab-edu-nacl
+    - lab-edu-sub-db-02 /   lab-edu-rtb-db /    -              / lab-edu-nacl
+    - lab-edu-sub-tgw-01 /  lab-edu-rtb-tgw /   -              / lab-edu-nacl
+    - lab-edu-sub-tgw-02 /  lab-edu-rtb-tgw /   -              / lab-edu-nacl
+
+# API_GATEWAY
+- lab-edu-apigw-serverlee
+
+# LOAD_BALANCER
+- lab-edu-alb-web
+
+    
+    
+    
+Computing Resources
+# AP_NORTHEAST_2 (SEOUL REGION)
+- EC2
+    - lab-edu-cloud9-workspace      / lab-edu-vpc-ap-01 / lab-edu-sub-pub-01
+    - lab-edu-ec2-openvpn           / lab-edu-vpc-ap-01 / lab-edu-sub-pub-01
+    - lab-edu-ec2-network-ap-01     / lab-edu-vpc-ap-01 / lab-edu-sub-pri-01 (NAT GW O)
+    - lab-edu-ec2-network-ap-02     / lab-edu-vpc-ap-01 / lab-edu-sub-pri-02 (NAT GW X)
+    - lab-edu-ec2-web-ap            / lab-edu-vpc-ap-01 / lab-edu-sub-pri-01 (NAT GW O)
+    - lab-edu-ec2-web-ap            / lab-edu-vpc-ap-01 / lab-edu-sub-pri-02 (NAT GW X)
+    - lab-edu-ec2-network-ap-2nd    / lab-edu-vpc-ap-02 / lab-edu-sub-2nd-pri-01 (NAT GW X)
+- RDS & Elasticache
+    - lab-edu-aurora-attraction
+    - lab-edu-elasticache-web
+- DynamoDB 
+    - lab-edu-dynamodb-todo-list
+- Lambda
+    - lab-edu-lambda-serverless-01
+    - lab-edu-lambda-serverless-02
+    - lab-edu-lambda-sns
+
+# EU_CENTRAL_1 (FRANKFURT REGION)
+- EC2
+    - lab-edu-ec2-web-eu            / lab-edu-vpc-eu    / lab-edu-sub-pub-01
+    - lab-edu-ec2-network-eu        / lab-edu-vpc-eu    / lab-edu-sub-pri-01
+
+# US_EAST_1 (VIRGINIA REGION)
+- EC2
+    - lab-edu-ec2-web-us            / lab-edu-vpc-us    / lab-edu-sub-pub-01
+    - lab-edu-ec2-openswan          / lab-edu-vpc-us    / lab-edu-sub-pub-01
+    - lab-edu-ec2-network-us        / lab-edu-vpc-us    / lab-edu-sub-pri-01
+    
+
+
+
+
+
+Storage Resources
+- S3
+    - lab-edu-bucket-images-{ACCOUNT_NUMBER}
+    - lab-edu-bucket-serverless-{ACCOUNT_NUMBER}
+    - lab-edu-bucket-web-{ACCOUNT_NUMBER}
+    - lab-edu-bucket-artifact-store-application-{ACCOUNT_NUMBER}
+    - lab-edu-bucket-cloudformation-{ACCOUNT_NUMBER}
+- EFS
+    - lab-edu-efs-web
+    
+
+
+CI/CD 
+- CodeCommit
+    - lab-edu-codecommit-application
+- CodeDeploy
+    - lab-edu-codedeploy-application-ec2
+    - lab-edu-deployment-group-app
+- CodePipeline
+    - lab-edu-codepipeline-application
+    
+
+
+
+Security
+- WAF
+    - lab-edu-waf-web
+- IAM Role
+    - lab-edu-role-ssmaccess
+    - lab-edu-role-cloud9
+    - lab-edu-role-webserver-eu
+    - lab-edu-role-webserver-us
+
+    
+    
+GITHUB-SOURCE-CODE-URL
+- streamlit-project
+- serverless-project

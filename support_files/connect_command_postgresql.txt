@@ -1,0 +1,5 @@
+# POSTGRESQL DEFAULT DB 접속 COMMAND
+psql -U postgres -h {POSTGRESQL_CONNETION_INFORMATION}
+
+# POSTGRESQL "trip_advisor" DB 접속 COMMAND
+psql –U user –d trip_advisor –h {POSTGRESQL_CONNETION_INFORMATION} 

@@ -1,0 +1,47 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": [
+                "{BUCKET_NAME}",
+                "{BUCKET_NAME}/*"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "aws:sourceVpce": "{VPC_ENDPOINT_ID}"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::{ACCOUNT_ID}:user/{IAM_USER}"
+                ]
+            },
+            "Action": "s3:*",
+            "Resource": [
+                "{BUCKET_NAME}",
+                "{BUCKET_NAME}/*"
+            ]
+        },
+        {
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": [
+                "{BUCKET_NAME}",
+                "{BUCKET_NAME}/*"
+            ],
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:sourceVpce": "{VPC_ENDPOINT_ID}",
+                    "aws:PrincipalType": "User"
+                }
+            }
+        }
+    ]
+}
