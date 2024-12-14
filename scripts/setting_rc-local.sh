@@ -9,7 +9,7 @@ sudo chmod 755 /etc/rc.d/rc.local
 
 # Configuration Systemd Service
 sudo bash -c 'echo "Restart=always" >> /lib/systemd/system/rc-local.service'
-sudo bash -c 'echo "User=ec2-user" >> /lib/systemd/system/rc-local.service'
+sudo bash -c 'echo "User=root" >> /lib/systemd/system/rc-local.service'
 sudo bash -c 'echo " " >> /lib/systemd/system/rc-local.service'
 sudo bash -c 'echo "[Install]" >> /lib/systemd/system/rc-local.service'
 sudo bash -c 'echo "WantedBy=multi-user.target" >> /lib/systemd/system/rc-local.service'
