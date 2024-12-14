@@ -6,5 +6,5 @@ def stop_process():
 
 def start_process(timeout=300):
     stop_process()  # 새 프로세스를 시작하기 전에 이전 프로세스를 종료합니다.
-    command = f"stress --cpu 1 --timeout {timeout}"
+    command = f"stress --cpu 2 --timeout {timeout}"
     subprocess.Popen(command, start_new_session=True, shell=True)
