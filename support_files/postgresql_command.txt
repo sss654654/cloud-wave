@@ -4,6 +4,9 @@ psql
 psql -U user
 psql -U user -d trip_advisor
 
+psql -U postgres -h {POSTGRESQL_ENDPOINT}
+psql –U user –d trip_advisor –h {POSTGRESQL_ENDPOINT} 
+
 
 [데이터베이스 변경]
 \c trip_advisor user
@@ -36,7 +39,6 @@ where datname='trip_advisor';
 
 [데이터베이스 접속 오류 (ERROR: Peer authentication failed for user)]
 vim /var/lib/pgsql/13/data/pg_hba.conf
-
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
 # "local" is for Unix domain socket connections only
 local   all             all                                     peer

@@ -496,7 +496,7 @@ Resources:
           "echo \"scripts/\" >> .git/info/sparse-checkout\n",
           "echo \"support_files/\" >> .git/info/sparse-checkout\n",
           "git pull origin main\n",
-          "cd support_files\n",
+          "cd support_files/python_test_code\n",
           "streamlit run ec2_main_home.py --server.port 80\n"] ]
       Tags:
         - Key: Name
