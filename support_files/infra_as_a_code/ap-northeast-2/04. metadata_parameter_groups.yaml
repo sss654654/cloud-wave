@@ -82,11 +82,11 @@ Parameters:
   PrivateRoutingTable01Id:
     Description: ID for PrivateRoutingTable01Id
     Type: String
-    Default: lab-edu-rtb-2nd-pri
+    Default: lab-edu-rtb-2nd-pri-01
   PrivateRoutingTable02Id:
     Description: ID for PrivateRoutingTable02Id
     Type: String
-    Default: lab-edu-rtb-2nd-pri
+    Default: lab-edu-rtb-2nd-pri-02
   DatabaseRoutingTableId:
     Description: ID for DatabaseRoutingTableId
     Type: String

@@ -3,23 +3,9 @@
     "Statement": [
         {
             "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:*",
-            "Resource": [
-                "{BUCKET_ARN}",
-                "{BUCKET_ARN}/*"
-            ],
-            "Condition": {
-                "StringEquals": {
-                    "aws:sourceVpce": "{VPC_ENDPOINT_ID}"
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
             "Principal": {
                 "AWS": [
-                    "arn:aws:iam::{ACCOUNT_ID}:user/{IAM_USER}"
+                    "{IAM_ROLE_ARN}"
                 ]
             },
             "Action": "s3:*",

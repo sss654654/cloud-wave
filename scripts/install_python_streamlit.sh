@@ -65,7 +65,7 @@ cd ~/cloud-wave-workspace
 git config --global init.defaultBranch main
 git init
 git config core.sparseCheckout true
-git remote add origin https://github.com/sh1517/streamlit-project.git
+git remote add origin https://github.com/CJ-CloudWave-Public-Hands-on-Lab/streamlit-project.git
 echo "scripts/" >> .git/info/sparse-checkout
 echo "support_files/" >> .git/info/sparse-checkout
 git pull origin main

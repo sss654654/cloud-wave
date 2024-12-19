@@ -492,7 +492,7 @@ Resources:
           "cd streamlit-project\n",
           "git init\n",
           "git config core.sparseCheckout true\n",
-          "git remote add -f origin https://github.com/sh1517/streamlit-project.git\n",
+          "git remote add -f origin https://github.com/CJ-CloudWave-Public-Hands-on-Lab/streamlit-project.git\n",
           "echo \"scripts/\" >> .git/info/sparse-checkout\n",
           "echo \"support_files/\" >> .git/info/sparse-checkout\n",
           "git pull origin main\n",
