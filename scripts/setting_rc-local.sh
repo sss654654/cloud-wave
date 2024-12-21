@@ -8,7 +8,7 @@ sudo ln -s /etc/rc.d/rc.local /etc/rc.local
 sudo chmod 755 /etc/rc.d/rc.local
 
 # Configuration Systemd Service
-sudo bash -c 'echo "Restart=always" >> /lib/systemd/system/rc-local.service'
+# sudo bash -c 'echo "Restart=always" >> /lib/systemd/system/rc-local.service'
 sudo bash -c 'echo "User=root" >> /lib/systemd/system/rc-local.service'
 sudo bash -c 'echo " " >> /lib/systemd/system/rc-local.service'
 sudo bash -c 'echo "[Install]" >> /lib/systemd/system/rc-local.service '
