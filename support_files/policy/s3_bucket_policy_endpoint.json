@@ -15,7 +15,7 @@
             ]
         },
         {
-            "Effect": "Deny",
+            "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:*",
             "Resource": [
@@ -23,9 +23,8 @@
                 "{BUCKET_ARN}/*"
             ],
             "Condition": {
-                "StringNotEquals": {
-                    "aws:sourceVpce": "{VPC_ENDPOINT_ID}",
-                    "aws:PrincipalType": "User"
+                "StringEquals": {
+                    "aws:sourceVpce": "{VPC_ENDPOINT_ID}"
                 }
             }
         }
