@@ -23,7 +23,7 @@ def lambda_handler(event, context):
         data = {
             'statusCode': 200,
             'headers': {'Access-Control-Allow-Origin': '*'},
-            'body': json.dumps(items) 
+            'body': json.dumps(items)
         }
         return data
     except Exception as e:
