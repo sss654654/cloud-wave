@@ -3,19 +3,6 @@
     "Statement": [
         {
             "Effect": "Allow",
-            "Principal": {
-                "AWS": [
-                    "{IAM_ROLE_ARN}"
-                ]
-            },
-            "Action": "s3:*",
-            "Resource": [
-                "{BUCKET_ARN}",
-                "{BUCKET_ARN}/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:*",
             "Resource": [
