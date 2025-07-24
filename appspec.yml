@@ -7,6 +7,11 @@ files:
 file_exists_behavior: OVERWRITE
 hooks:
   BeforeAllowTraffic:
+    - location: scripts/before_traffic.sh
+  AllowTraffic:
+    - location: scripts/allow_traffic.sh
+  AfterAllowTraffic:
+    - location: scripts/after_traffic.sh
   ApplicationStop:
     - location: scripts/stop_streamlit.sh
     # - location: scripts/stop_applications.sh
