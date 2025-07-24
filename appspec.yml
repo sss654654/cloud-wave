@@ -11,5 +11,5 @@ hooks:
     - location: scripts/stop_applications.sh
       timeout: 10
   ApplicationStart:
-    #- location: scripts/start_streamlit.sh
+    #- location: scripts/start_streamlit.sh .
     - location: scripts/start_applications.sh
