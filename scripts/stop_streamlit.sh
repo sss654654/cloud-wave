@@ -7,7 +7,7 @@ then
   echo "Application is not running"
 else
   echo "Kill -9 $APP_PID"
-  sudo kill -9 $APP_PID
+  kill -9 $APP_PID
   sleep 5
 fi
 
