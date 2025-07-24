@@ -13,5 +13,3 @@ hooks:
   ApplicationStart:
     - location: scripts/start_streamlit.sh
     # - location: scripts/start_applications.sh
-  # ValidateService:
-  #   - location: scripts/finish_streamlit.sh
